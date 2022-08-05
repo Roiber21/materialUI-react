@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 
 module.exports = {
@@ -53,5 +54,12 @@ module.exports = {
       filename:'[name].css'
     }),
   ],
+  optimization: {
+    minimize:true,
+    minimizer:[
+        new TerserPlugin(),
+
+    ]
+}
 
 }
