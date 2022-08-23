@@ -1,10 +1,12 @@
 import { Stack, Typography } from '@mui/material';
 import React, { Fragment } from 'react'
+import PaperInformation from '../../components/PaperInformation';
 
 const Description = (props) => {
     const{ userState }= props;
     const {bio}= userState
   return (
+    <Fragment>
      <Stack>
         {bio != null
         ? <Typography> {bio}</Typography>
@@ -16,6 +18,8 @@ const Description = (props) => {
         }
      
        </Stack>
+       <PaperInformation userState={userState} />
+       </Fragment>
   )
 }
 
