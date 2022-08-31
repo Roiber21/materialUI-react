@@ -9,9 +9,17 @@ const LocationInformation = (props) => {
     const {userState}= props
     const {location, twitter_username, blog,company}= userState;
   return (
-        <Grid container >
-            <Grid item xs={6}>
-                <Stack>
+        <Grid container
+        spacing={2} 
+        sx={{
+            marginTop:'15px'
+        }}
+        >
+            <Grid item xs={12} lg={6}>
+                <Stack 
+                spacing={2}
+                direction='row'
+                >
                 <LocationOnIcon/>
                 {location != null
                ?  <Typography>{location}</Typography>
@@ -20,28 +28,37 @@ const LocationInformation = (props) => {
                 </Stack>
 
             </Grid>
-            <Grid item xs={6}>
-                <Stack>
+            <Grid item xs={12} lg={6}>
+                <Stack 
+                spacing={2}
+                direction='row'
+                >
                 <TwitterIcon/>
                {twitter_username != null
-               ?  <Typography>@{twitter_username}</Typography>
-               :  <Typography>Not available</Typography>
+               ?  <a target='_blank' href={`https://twitter.com/${twitter_username}`} rel="noreferrer"> <Typography>@{twitter_username}</Typography></a> 
+               :  <Typography >Not available</Typography>
                }
                 </Stack>
 
             </Grid>
-            <Grid item xs={6}>
-                <Stack>
+            <Grid item xs={12} lg={6}>
+                <Stack
+                spacing={2}
+                direction='row'
+                >
                 <LanguageIcon/>
                 {blog != ''
-               ?  <Typography>{blog}</Typography>
+               ?  <a target='_blank' href={blog} rel="noreferrer"><Typography>{blog}</Typography></a>
                :  <Typography>Not available</Typography>
                }
                 </Stack>
 
             </Grid>
-            <Grid item xs={6}>
-                <Stack>
+            <Grid item xs={12} lg={6}>
+                <Stack
+                spacing={2}
+                direction='row'
+                >
                 <BusinessIcon/>
                 {company != null
                ?  <Typography>{company}</Typography>

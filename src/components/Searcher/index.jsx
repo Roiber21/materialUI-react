@@ -12,9 +12,19 @@ const Searcher = (props) =>{
     }
 
 
+
     const handleSubmit= () =>{
         setInputUser(valueInput);
     }
+    
+    const handleEnter = (e) => {
+        if (e.charCode == 13) {
+            handleSubmit()
+        }
+    }
+
+    
+   
     return (
         <Stack
         direction='row'
@@ -29,6 +39,8 @@ const Searcher = (props) =>{
         variant="outlined"
         size='small'
         value={valueInput}
+        onKeyPress={(event) => handleEnter(event)} 
+    
         onChange={onSearchValueChange}
         sx={{
             width:'90%',

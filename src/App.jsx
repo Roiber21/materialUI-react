@@ -32,14 +32,16 @@ const App = () => {
    
   return(
     <Container sx={{
-      background:'whitesmoke',
-      width: '80vw',
-      height:'500px',
-      borderRadius:'16px',
-      marginTop:'40px',
-      display:'flex',
-      flexDirection: 'column',
-      alignItems: 'center'
+      background:'#b3d9e45c',
+      width: {xs:"90vw", md: "80vw"},
+        height: {xs:"100%", md: "100vh", lg:"500px"},
+        borderRadius: '16px',
+        marginTop: {xs:"15px", md: "30px", lg:"40px"},
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingBottom: {xs:"1rem", sm: "3rem", lg:"0"}
+      
     }}> 
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
       <UserCard userState={userState} />
